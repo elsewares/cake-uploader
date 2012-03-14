@@ -59,18 +59,18 @@ class AttachmentBehavior extends ModelBehavior {
 	 * @var array
 	 */
 	protected $_defaults = array(
-		'name' => '',
+		'name' => '_formatFileName',
 		'baseDir' => '',
-		'uploadDir' => '',
+		'uploadDir' => 'files/uploads/',
 		'append' => '',
 		'prepend' => '',
-		'dbColumn' => 'uploadPath',
+		'dbColumn' => 'uri',
 		'importFrom' => '',
 		'defaultPath' => '',
 		'maxNameLength' => null,
-		'overwrite' => true,			// Overwrite a file with the same name if it exists
+		'overwrite' => false,			// Overwrite a file with the same name if it exists
 		'stopSave' => true,				// Stop model save() on form upload error
-		'allowEmpty' => true,			// Allow an empty file upload to continue
+		'allowEmpty' => false,			// Allow an empty file upload to continue
 		'saveAsFilename' => false,		// If true, will only save the filename and not relative path
 		'transforms' => array(),
 		's3' => array(
